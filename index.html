@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nori Design - Official Store</title>
+<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+--bg:#FFF5F0; 
+--main:#FFB7B2;
+--dark:#D47B75;
+--white:#FFFFFF;
+--glow:rgba(255,183,178,0.4);
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Mitr',sans-serif;}
+body{
+background:var(--bg);
+display:flex;
+justify-content:center;
+overflow-x: hidden; /* ป้องกันอิโมจิทำจอเลื่อน */
+}
+
+/* --- ลูกเล่น Emoji Background --- */
+.emoji-bg {
+    position: fixed;
+    top: -20px;
+    font-size: 20px;
+    user-select: none;
+    pointer-events: none;
+    z-index: -1;
+    animation: fall linear forwards;
+}
+@keyframes fall {
+    to { transform: translateY(105vh) rotate(360deg); }
+}
+
+.container{
+max-width:500px;
+width:100%;
+padding:20px 15px 40px;
+position: relative;
+z-index: 1;
+}
+.section{
+background:var(--white);
+border-radius:20px;
+padding:25px 20px;
+margin-bottom:20px;
+box-shadow:0 8px 20px rgba(0,0,0,0.05);
+border:2px solid var(--main);
+}
+h1,h2,h3{color:var(--dark);}
+.center{text-align:center;}
+.logo{
+width:150px;height:150px;
+border-radius:50%;
+overflow:hidden;
+margin:0 auto 20px;
+box-shadow:0 6px 20px var(--glow);
+border: 4px solid #fff;
+}
+.logo img{width:100%;height:100%;object-fit:cover;}
+.badges{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+margin-bottom:20px;
+}
+.badge{
+background:#fff;
+padding:8px 16px;
+border-radius:25px;
+box-shadow:0 4px 10px var(--glow);
+font-size:13px;
+color:var(--dark);
+}
+.btn{
+display:block;
+text-align:center;
+padding:14px;
+border-radius:25px;
+text-decoration:none;
+margin-top:15px;
+font-weight:500;
+}
+.btn-outline{
+background:#fff;
+border:2px dashed var(--main);
+color:var(--dark);
+}
+.btn-main{
+background:var(--main);
+color:#fff;
+}
+.step{
+display:flex;
+align-items:center;
+gap:12px;
+margin-bottom:12px;
+}
+.step-num{
+background:var(--main);
+color:#fff;
+width:26px;height:26px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:13px;
+}
+.price-row{
+display:flex;
+justify-content:space-between;
+margin-bottom:10px;
+background:#fffcfd;
+padding:10px 15px;
+border-radius:15px;
+border-left: 4px solid var(--main);
+}
+.price-tag{
+background:var(--main);
+color:#fff;
+padding:3px 12px;
+border-radius:20px;
+font-size:12px;
+text-decoration: none;
+}
+.footer{
+text-align:center;
+margin-top:30px;
+}
+.socials{
+display:flex;
+gap:8px;
+justify-content:center;
+margin-top:15px;
+}
+.socials a{
+flex:1;
+max-width:100px;
+text-align:center;
+padding:8px;
+border-radius:25px;
+background:#fff;
+text-decoration:none;
+color:var(--dark);
+font-size:13px;
+border:1px solid #ffeef5;
+}
+.small{font-size:12px;opacity:.7;margin-top:10px;}
+.scroll-box {
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+.scroll-box::-webkit-scrollbar {
+    width: 5px;
+}
+.scroll-box::-webkit-scrollbar-thumb {
+    background: var(--main);
+    border-radius: 10px;
+}
+</style>
+</head>
+<body>
+
+<script>
+function createEmoji() {
+    const emojis = ['🩷', '🧡', '✨', '🌻'];
+    const emoji = document.createElement('div');
+    emoji.className = 'emoji-bg';
+    emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+    emoji.style.left = Math.random() * 100 + 'vw';
+    emoji.style.animationDuration = Math.random() * 3 + 2 + 's';
+    emoji.style.opacity = Math.random();
+    document.body.appendChild(emoji);
+    setTimeout(() => { emoji.remove(); }, 5000);
+}
+setInterval(createEmoji, 500);
+</script>
+
+<div class="container">
+<div class="section center" style="border:none;box-shadow:none;background:transparent;">
+<div class="logo">
+<img src="https://i.postimg.cc/QtNFQs7G/pr-bch-d.jpg" alt="Nori Design">
+</div>
+<h1>Nori Design</h1>
+<p style="color:var(--dark);opacity:.8;margin:10px 0 20px;">
+ยินดีต้อนรับเข้าสู้ร้านโนริค่า สอบถามได้นะคะ มีสะสมแต้ม🌻
+</p>
+<div class="badges">
+<div class="badge">🎨 ทำป้าย</div>
+<div class="badge">✨ ทำสติกเกอร์</div>
+<div class="badge">🌐 ทำเว็บร้านค้า</div>
+<div class="badge)👥 ดึงเข้ากลุ่ม</div>
+</div>
+<a href="https://drive.google.com/drive/folders/1YKwLAZogYhZKBWPBxGKTGVwzR3zcEDel" class="btn btn-outline">
+เช็คคิวงาน/กลุ่มเส้นประ ✨
+</a>
+</div>
+<div class="section">
+<h2>📝 ขั้นตอนการเข้ากลุ่ม</h2>
+<div class="step"><div class="step-num">1</div><div>ดูตัวอย่างแล้วแคปรูปกลุ่มที่สนใจ</div></div>
+<div class="step"><div class="step-num">2</div><div>ทักเฟสบุ๊คแจ้งกลุ่มที่ต้องการ</div></div>
+<div class="step"><div class="step-num">3</div><div>รวมยอด โอนเงิน และส่งสลิป</div></div>
+<div class="step"><div class="step-num">4</div><div>รอดึงเข้ากลุ่มตามลำดับคิว</div></div>
+<a href="https://drive.google.com/drive/folders/1ovnS1imBV8jKO-fCHfBhnd3NDw8Yl1lv" class="btn btn-main">ดูตัวอย่างงานทั้งหมด</a>
+</div>
+
+<div class="section">
+<h2>📍 กลุ่มแนะนำ (ต้องมี) 🌈</h2>
+<div class="price-row"><span>Serabies</span><a href="https://drive.google.com/drive/folders/18wz_Hx9Iik7YGXZK4nOi8i2z1IdcZOg6" class="price-tag">ดูลิ้งก์</a></div>
+<div class="price-row"><span>Rosella</span><a href="https://shorturl.asia/zVTa9" class="price-tag">ดูลิ้งก์</a></div>
+<div class="price-row"><span>Kelbies V1/V2</span><a href="https://drive.google.com/drive/folders/1O5mfoZTg1Ecoh99PsIz3EEgAWvAWUc0Q" class="price-tag">ดูลิ้งก์</a></div>
+<div class="price-row"><span>Kellynori V1/V2</span><a href="https://drive.google.com/drive/folders/1ymzwaJGDlrMyp7JJB9kkJMl4bH8utyz7" class="price-tag">ดูลิ้งก์</a></div>
+
+<h2 style="margin-top:20px;">🎨 รายชื่อกลุ่มทั้งหมด</h2>
+<div class="scroll-box">
+<div class="price-row"><span>INKY GROUP</span><a href="https://drive.google.com/drive/folders/1Ye9suMpDDivZ45bzRfnQ0f-o1w0dEHvQ" class="price-tag">Link</a></div>
+<div class="price-row"><span>ลายเส้น Belinda</span><a href="https://drive.google.com/drive/folders/1EHSj38mZ9XxLsmS1WXyrjTIOsl7sjGQK" class="price-tag">Link</a></div>
+<div class="price-row"><span>Still drawing V1/V2</span><a href="https://drive.google.com/drive/folders/1fItAncfAu3g91k6dYNnX7EEihn3dj4kS" class="price-tag">Link</a></div>
+<div class="price-row"><span>Merita / Calista</span><a href="https://drive.google.com/drive/folders/1EdZHXv2yzinG1-fCTeszo4IFTcEwBN1t" class="price-tag">Link</a></div>
+<div class="price-row"><span>Jamille / Pancake</span><a href="https://drive.google.com/drive/folders/117KeqfEJU-VrfHPzpAPDeNT62nvaPB7a" class="price-tag">Link</a></div>
+<div class="price-row"><span>Queen pop / Hormony</span><a href="https://drive.google.com/drive/folders/1lWfTHqAbVoZH2YveT70TO5pmfiikwY3G" class="price-tag">Link</a></div>
+<div class="price-row"><span>Fusion / Kawaii Fuji</span><a href="https://drive.google.com/drive/folders/1LaYCivILFAjqKgnzTMJJ5RlRXZgB9YWf" class="price-tag">Link</a></div>
+<div class="price-row"><span>Teaching / Mitarashi</span><a href="https://drive.google.com/drive/folders/13zR7r66v8hO-rD2t6LahxD1f9Mc8J1Ue" class="price-tag">Link</a></div>
+<div class="price-row"><span>Jainoy / ฟุคุเนโกะ</span><a href="https://drive.google.com/drive/folders/1cV7jkDmRh1VD-nD_I-VDsW__zUzSFYYQ" class="price-tag">Link</a></div>
+<div class="price-row"><span>Glitter magic / แมวดำ</span><a href="https://drive.google.com/drive/folders/1KE9lcHUTP5sS8csxiCD9shzwH3dW9gzV" class="price-tag">Link</a></div>
+<div class="price-row"><span>Jellybunnie V1/V2</span><a href="https://drive.google.com/drive/folders/1_szs-_HaCJMy6hBb7N4_dDVzZW4jkQoS" class="price-tag">Link</a></div>
+<div class="price-row"><span>นุบนิบบรัช / Trick sticker</span><a href="https://drive.google.com/drive/folders/10YII_ZXufqnMh896HnB2Z6LD888Imh-0" class="price-tag">Link</a></div>
+<div class="price-row"><span>Sugar plum V1/V2</span><a href="https://drive.google.com/drive/folders/1VG-NqauROtZhjzgYePtfd6TI3XsKry7f" class="price-tag">Link</a></div>
+<div class="price-row"><span>Kuromi / Little spark</span><a href="https://drive.google.com/drive/folders/1-TTWSUqSELb80zXcnYaZaYxTyGRLio5W" class="price-tag">Link</a></div>
+<div class="price-row"><span>Vioer / Pikoro</span><a href="https://drive.google.com/drive/folders/1A5FC5j1dGakbow9ISiFywUSPOymAXPSW" class="price-tag">Link</a></div>
+</div>
+<a href="https://linkbio.co/noridesign" class="btn btn-main">ตัวอย่างกลุ่มทั้งหมด</a>
+</div>
+
+<div class="section">
+<h2 style="color:#ff4d4d;">📍 กฎของร้าน 📍</h2>
+<p class="small" style="color:red; opacity:1;">*โอนเงินแล้วไม่รับโอนคืนทุกกรณี*</p>
+<div style="font-size:13px; margin-top:10px; line-height:1.6;">
+    • ยกเลิกงานหลังส่งบรีฟ (เริ่มงานแล้ว) คืนเงิน 50%<br>
+    • ยกเลิกหลังเช็คงาน ไม่คืนเงินทุกกรณี<br>
+    • งานป้าย/สติกเกอร์: 1-2 วัน (งานเร่ง x2)<br>
+    • งานเว็บ: 4-8 ชั่วโมง (ตามคิว)
+</div>
+</div>
+
+<div class="footer">
+<a href="https://www.facebook.com/nori.desing" class="btn btn-main">ติดต่อสอบถามคลิก 🎀</a>
+<div class="socials">
+<a href="https://www.facebook.com/nori.desing">Facebook</a>
+<a href="https://linkbio.co/noridesign">Linkbio</a>
+<a href="#">LINE</a>
+</div>
+<p class="small">© 2026 Nori Design</p>
+</div>
+</div>
+</body>
+</html>
