@@ -1,319 +1,177 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nori Design - Welcome to my shop</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600&family=Slackey&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --color-pink-bg: #fff5f0;
-            --color-pink-dot: #ffe4d1;
-            --color-pink-dark: #ff8e6e;
-            --color-pink-light: #ffb8a1;
-            --color-brown-dark: #5c3a21;
-            --color-brown-light: #7b5338;
-            --color-accent-orange: #ff9e7d;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nori Design - Official</title>
+<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+--bg:#FFF5F0; 
+--main:#F6A5C9;
+--dark:#E889B5;
+--white:#FFFFFF;
+--glow:rgba(246,165,201,0.4);
+--accent:#FFB347; 
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Mitr',sans-serif;}
+body{
+    background:var(--bg);
+    display:flex;
+    justify-content:center;
+    position: relative;
+    overflow-x: hidden;
+}
 
-        body {
-            font-family: 'Mitr', sans-serif;
-            background-color: var(--color-pink-bg);
-            background-image: radial-gradient(var(--color-pink-dot) 15%, transparent 16%), radial-gradient(var(--color-pink-dot) 15%, transparent 16%);
-            background-size: 24px 24px;
-            background-position: 0 0, 12px 12px;
-            color: var(--color-brown-dark);
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-        }
+/* --- ลูกเล่นพื้นหลังระยิบระยับ --- */
+.bg-emoji {
+    position: fixed;
+    top: -10%;
+    font-size: 20px;
+    user-select: none;
+    pointer-events: none;
+    z-index: -1;
+    animation: float 10s linear infinite;
+    opacity: 0.5;
+}
+@keyframes float {
+    0% { transform: translateY(0vh) translateX(0) rotate(0deg); opacity: 0; }
+    20% { opacity: 0.5; }
+    80% { opacity: 0.5; }
+    100% { transform: translateY(110vh) translateX(20px) rotate(360deg); opacity: 0; }
+}
+/* สุ่มตำแหน่ง emoji */
+.bg-emoji:nth-child(1) { left: 10%; animation-duration: 8s; }
+.bg-emoji:nth-child(2) { left: 30%; animation-duration: 12s; animation-delay: -2s; }
+.bg-emoji:nth-child(3) { left: 50%; animation-duration: 10s; animation-delay: -5s; }
+.bg-emoji:nth-child(4) { left: 70%; animation-duration: 14s; animation-delay: -3s; }
+.bg-emoji:nth-child(5) { left: 90%; animation-duration: 9s; animation-delay: -7s; }
 
-        /* ✨ Emoji Falling Animation ✨ */
-        .emoji-container {
-            position: fixed;
-            top: -50px;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 10;
-        }
-
-        .falling-emoji {
-            position: absolute;
-            font-size: 24px;
-            animation: fall linear infinite;
-            user-select: none;
-        }
-
-        @keyframes fall {
-            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.8; }
-            90% { opacity: 0.8; }
-            100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
-        }
-
-        .font-slackey { font-family: 'Slackey', 'Mitr', cursive; }
-        .text-shadow-cute { text-shadow: 2px 2px 0px #fff, 3px 3px 0px var(--color-pink-light); }
-        .clean-box { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-radius: 40px; box-shadow: 0 10px 40px rgba(255, 142, 110, 0.15); }
-        
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: var(--color-pink-bg); }
-        ::-webkit-scrollbar-thumb { background: var(--color-pink-dark); border-radius: 10px; }
-
-        .modal-enter { animation: modalFadeIn 0.3s ease-out forwards; }
-        .modal-exit { animation: modalFadeOut 0.2s ease-in forwards; }
-        @keyframes modalFadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
-        @keyframes modalFadeOut { from { opacity: 1; transform: scale(1); } to { opacity: 0; transform: scale(0.95); } }
-
-        .slider-track { display: flex; transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
-        .slide { min-width: 100%; }
-    </style>
+.container{max-width:500px;width:100%;padding:20px 15px 40px; position: relative; z-index: 1;}
+.section{background:var(--white);border-radius:20px;padding:25px 20px;margin-bottom:20px;box-shadow:0 8px 20px rgba(0,0,0,0.05);border:2px solid var(--main);}
+h1,h2,h3{color:var(--dark);margin-bottom:15px;}
+.center{text-align:center;}
+.logo{width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 20px;box-shadow:0 6px 20px var(--glow);background:#eee;}
+.logo img{width:100%;height:100%;object-fit:cover;}
+.badges{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:20px;}
+.badge{background:#fff;padding:8px 16px;border-radius:25px;box-shadow:0 4px 10px var(--glow);font-size:13px;color:var(--dark);border: 1px solid var(--bg);}
+.btn{display:block;text-align:center;padding:14px;border-radius:25px;text-decoration:none;margin-top:15px;font-weight:500;transition: 0.3s;}
+.btn-outline{background:#fff;border:2px dashed var(--main);color:var(--dark);}
+.btn-main{background:var(--main);color:#fff;}
+.step{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.step-num{background:var(--main);color:#fff;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;}
+.price-row{display:flex;justify-content:space-between;margin-bottom:10px;background:#fffcfd;padding:10px 15px;border-radius:15px;border-left: 4px solid var(--accent);}
+.price-tag{background:var(--accent);color:#fff;padding:3px 12px;border-radius:20px;font-size:14px;}
+.footer{text-align:center;margin-top:30px;}
+.socials{display:flex;gap:8px;justify-content:center;margin-top:15px;}
+.socials a{flex:1;max-width:100px;text-align:center;padding:8px;border-radius:25px;background:#fff;text-decoration:none;color:var(--dark);font-size:13px;border:1px solid #ffeef5;}
+.small{font-size:12px;opacity:.7;margin-top:10px;}
+.drive-grid{display:grid;grid-template-columns: 1fr;gap:10px;margin-top:15px;}
+.drive-item{background:#fffaf0;padding:12px;border-radius:15px;text-decoration:none;color:var(--dark);font-size:13px;border:1px solid #ffe0cc;display:flex;justify-content:space-between;align-items:center;}
+.rule-box{background:#fff5f5;padding:15px;border-radius:15px;font-size:13px;border:1px solid #ffcccc;margin-top:15px;line-height:1.6;}
+</style>
 </head>
-<body class="min-h-screen pb-12">
+<body>
+<div class="bg-emoji">🩷</div><div class="bg-emoji">🧡</div><div class="bg-emoji">🩷</div><div class="bg-emoji">🧡</div><div class="bg-emoji">🩷</div>
 
-    <div class="emoji-container" id="emoji-container"></div>
+<div class="container">
+<div class="section center" style="border:none;box-shadow:none;background:transparent;">
+<div class="logo"><img src="https://i.postimg.cc/QtNFQs7G/pr-bch-d.jpg" alt="Nori Design Logo"></div>
+<h1>Nori Design</h1>
+<p style="color:var(--dark);opacity:.8;margin:10px 0 20px;">ยินดีต้อนรับเข้าสู้ร้านโนริค่า สอบถามได้นะคะ มีสะสมแต้ม🌻</p>
+<div class="badges">
+<div class="badge">🎨 ทำป้าย</div><div class="badge">🎀 สติกเกอร์</div><div class="badge">🌐 ทำเว็บ</div><div class="badge">👥 ดึงเข้ากลุ่ม</div>
+</div>
+<a href="https://drive.google.com/drive/folders/1YKwLAZogYhZKBWPBxGKTGVwzR3zcEDel" class="btn btn-outline">🌻 กลุ่มนี่เส้นปะ (คลิกดู Drive)</a>
+</div>
 
-    <div id="menu-overlay" onclick="toggleMenu()" class="fixed inset-0 bg-black/30 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-300"></div>
+<div class="section">
+<h2>📝 ขั้นตอนการเข้ากลุ่ม</h2>
+<div class="step"><div class="step-num">1</div><div>ดูตัวอย่างแล้วแคปรูปกลุ่มที่สนใจ ทักเฟสได้เลย</div></div>
+<div class="step"><div class="step-num">2</div><div>รวมยอด โอนเงิน</div></div>
+<div class="step"><div class="step-num">3</div><div>รอดึงเข้ากลุ่มได้เลย</div></div>
+<a href="https://linkbio.co/noridesign" class="btn btn-main">⭐️ ตัวอย่างกลุ่มต่างๆ</a>
+</div>
 
-    <div id="side-menu" class="fixed inset-y-0 left-0 w-64 bg-white/95 backdrop-blur-md shadow-2xl z-50 transform -translate-x-full transition-transform duration-300 ease-in-out border-r border-orange-100">
-        <div class="p-5 h-full flex flex-col">
-            <div class="flex justify-between items-center mb-6 border-b border-orange-50 pb-4">
-                <span class="font-slackey text-xl text-[#ff8e6e] text-shadow-cute">MENU</span>
-                <button onclick="toggleMenu()" class="text-orange-300 hover:text-orange-500 bg-orange-50 p-1 rounded-full transition">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                </button>
-            </div>
-            <div class="space-y-3 font-medium text-[#5c3a21] flex-1">
-                <a href="#services" onclick="toggleMenu()" class="flex items-center gap-3 p-3 hover:bg-orange-50 rounded-xl transition"> บริการของเรา </a>
-                <a href="#portfolio" onclick="toggleMenu()" class="flex items-center gap-3 p-3 hover:bg-orange-50 rounded-xl transition"> รายชื่อกลุ่ม </a>
-                <a href="#pricing" onclick="toggleMenu()" class="flex items-center gap-3 p-3 hover:bg-orange-50 rounded-xl transition"> เงื่อนไข & ขั้นตอน </a>
-                <a href="#contact" onclick="toggleMenu()" class="flex items-center gap-3 p-3 hover:bg-orange-50 rounded-xl transition"> ติดต่อเรา </a>
-            </div>
-            <div class="mt-auto border-t border-orange-50 pt-4 text-center">
-                <p class="font-slackey text-xs text-orange-400">NORI DESIGN</p>
-            </div>
-        </div>
-    </div>
+<div class="section">
+<h2>💰 ราคางาน</h2>
+<div class="price-row"><span>งานป้าย</span><span class="price-tag">89.-</span></div>
+<div class="price-row"><span>สติกเกอร์แชท/ไอจี</span><span class="price-tag">59.-</span></div>
+<div class="price-row"><span>สติกเกอร์ไลน์รูปตัวเอง</span><span class="price-tag">189.-</span></div>
+<div class="price-row"><span>ทำเว็บร้านค้า</span><span class="price-tag">129.-</span></div>
+<a href="https://drive.google.com/drive/folders/1ovnS1imBV8jKO-fCHfBhnd3NDw8Yl1lv" class="btn btn-main">ตัวอย่างงานคลิก</a>
+</div>
+<div class="section">
+<h2>📍 กลุ่มแนะนำต้องมี 🌈</h2>
+<div class="drive-grid">
+<a href="https://drive.google.com/drive/folders/18wz_Hx9Iik7YGXZK4nOi8i2z1IdcZOg6" class="drive-item">กลุ่ม Serabies <span>เปิด ></span></a>
+<a href="https://shorturl.asia/zVTa9" class="drive-item">กลุ่ม Rosella <span>เปิด ></span></a>
+<a href="https://drive.google.com/drive/folders/1O5mfoZTg1Ecoh99PsIz3EEgAWvAWUc0Q" class="drive-item">กลุ่ม Kelbies v1 <span>เปิด ></span></a>
+<a href="https://drive.google.com/drive/folders/1v7GevdSytdczmDmOlQ7tF3AEOunTHqBc" class="drive-item">กลุ่ม Kelbies v2 <span>เปิด ></span></a>
+<a href="https://drive.google.com/drive/folders/1ymzwaJGDlrMyp7JJB9kkJMl4bH8utyz7" class="drive-item">กลุ่ม Kellynori v1 <span>เปิด ></span></a>
+<a href="https://drive.google.com/drive/folders/1MJ9SuXIzyz3_alVFNA_HQ3oMULjRpQdQ" class="drive-item">กลุ่ม kellynori v2 <span>เปิด ></span></a>
+<a href="https://drive.google.com/drive/folders/1hiHUQv2oRy2SQCMefPAiKjR3iNjoPlyT" class="drive-item">กลุ่ม little baby <span>เปิด ></span></a>
+<a href="https://drive.google.com/drive/folders/14RG7Br-1PVr8K76cb2gnQZgDacK6Hp6Q" class="drive-item">กลุ่ม miracle effect v1 <span>เปิด ></span></a>
+<a href="https://drive.google.com/drive/folders/11Pq2C3rt8CIBbhV7Pn-IXYmahdmjRR7n" class="drive-item">กลุ่ม miracle effect v2 <span>เปิด ></span></a>
+<a href="https://drive.google.com/drive/folders/1cgM-RKOiolqM8g8bH3AjN9GeEPyUxUYH" class="drive-item">กลุ่มสอนวาดฮาวคิ้ว <span>เปิด ></span></a>
+</div>
 
-    <div class="w-full bg-white/90 backdrop-blur-md border-b border-orange-100 py-3 px-4 flex justify-between items-center text-[10px] sm:text-xs font-slackey text-[#ff8e6e] font-medium sticky top-0 z-30 shadow-sm">
-        <div class="flex items-center gap-2 sm:gap-3">
-            <button onclick="toggleMenu()" class="p-1.5 hover:bg-orange-50 rounded-md text-orange-500 transition-colors focus:outline-none">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-            </button>
-            <span>NORI DESIGN ></span>
-        </div>
-        <div class="flex items-center gap-4">
-            <span>WELCOME</span>
-        </div>
-    </div>
+<h2 style="margin-top:25px;">📁 รวมกลุ่มดึงเมลเอง</h2>
+<div class="drive-grid">
+<a href="https://drive.google.com/drive/folders/1Ye9suMpDDivZ45bzRfnQ0f-o1w0dEHvQ" class="drive-item">INKY GROUP</a>
+<a href="https://drive.google.com/drive/folders/1EHSj38mZ9XxLsmS1WXyrjTIOsl7sjGQK" class="drive-item">กลุ่มลายเส้น Belinda</a>
+<a href="https://drive.google.com/drive/folders/1fItAncfAu3g91k6dYNnX7EEihn3dj4kS" class="drive-item">Still drawing v1</a>
+<a href="https://drive.google.com/drive/folders/1V9U2f1Z9HHZmFqVR5H_H_XRo-VF-D6T5" class="drive-item">Still drawing v2</a>
+<a href="https://drive.google.com/drive/folders/1EdZHXv2yzinG1-fCTeszo4IFTcEwBN1t" class="drive-item">กลุ่ม Merita</a>
+<a href="https://drive.google.com/drive/folders/1NdbzjMsB3Le66YlvXCWt6ywZI18__sVk" class="drive-item">กลุ่ม Calista</a>
+<a href="https://drive.google.com/drive/folders/117KeqfEJU-VrfHPzpAPDeNT62nvaPB7a" class="drive-item">กลุ่ม Jamille</a>
+<a href="https://drive.google.com/drive/folders/1drtqFx3YBzHjnrjt-BrzdZm5FFlyBCKW" class="drive-item">กลุ่ม Pancake</a>
+<a href="https://drive.google.com/drive/folders/1lWfTHqAbVoZH2YveT70TO5pmfiikwY3G" class="drive-item">กลุ่ม Queen pop</a>
+<a href="https://drive.google.com/drive/folders/1ijU1i-CNAZgKTul6lmiN6VIDsPwVU2sd" class="drive-item">กลุ่ม Hormony</a>
+<a href="https://drive.google.com/drive/folders/1pgnqUzdmjW7vK0s_fNCV0SY6-S-FHOzp" class="drive-item">กลุ่ม Moonie</a>
+<a href="https://drive.google.com/drive/folders/1LaYCivILFAjqKgnzTMJJ5RlRXZgB9YWf" class="drive-item">กลุ่ม Fusion</a>
+<a href="https://drive.google.com/drive/folders/1CrGdw6jr_cYcRr2LXKq_yhrkMvna8fVX" class="drive-item">กลุ่ม kawaii Fuji</a>
+<a href="https://drive.google.com/drive/folders/13zR7r66v8hO-rD2t6LahxD1f9Mc8J1Ue" class="drive-item">กลุ่ม Teaching group</a>
+<a href="https://drive.google.com/drive/folders/1d6IxpNl4zajE7XP-W2KJ17wkGPkG11uj" class="drive-item">กลุ่ม Mitarashi</a>
+<a href="https://drive.google.com/drive/folders/1cV7jkDmRh1VD-nD_I-VDsW__zUzSFYYQ" class="drive-item">กลุ่ม Jainoy</a>
+<a href="https://drive.google.com/drive/folders/1skKUNZSFr1cE_PQwmk5dG-26zjnaRq9J" class="drive-item">กลุ่มฟุคุเนโกะ</a>
+<a href="https://drive.google.com/drive/folders/1KE9lcHUTP5sS8csxiCD9shzwH3dW9gzV" class="drive-item">กลุ่ม Glitter magic</a>
+<a href="https://drive.google.com/drive/folders/1Ufh9MFi49FBX00bPe05pXAtlWMdG3-0k" class="drive-item">กลุ่มแมวดำ</a>
+<a href="https://drive.google.com/drive/folders/1_szs-_HaCJMy6hBb7N4_dDVzZW4jkQoS" class="drive-item">Jellybunnie v2</a>
+<a href="https://drive.google.com/drive/folders/1QGC5IfTfafn6s0OFwhW17p92fwpAs2fx" class="drive-item">Jellybunnie v1</a>
+<a href="https://drive.google.com/drive/folders/10YI5_ZXufqnMh896HnB2Z6LD888Imh-0" class="drive-item">กลุ่มนุบนิบบรัช</a>
+<a href="https://drive.google.com/drive/folders/1mDzXfPna4LjDyzU8jRJT9-LQykywM1YZ" class="drive-item">Trick sticker by nes</a>
+<a href="https://drive.google.com/drive/folders/1VG-NqauROtZhjzgYePtfd6TI3XsKry7f" class="drive-item">Sugar plum v1</a>
+<a href="https://drive.google.com/drive/folders/1IhgsHW0niXL1P7TN-muEteDPSe7lPEwq" class="drive-item">Sugar plum v2</a>
+<a href="https://drive.google.com/drive/folders/1-TTWSUqSELb80zXcnYaZaYxTyGRLio5W" class="drive-item">กลุ่ม kuromi box</a>
+<a href="https://drive.google.com/drive/folders/1g565WGi56qOg09APdgYthQPRZYHsQ9pf" class="drive-item">กลุ่ม Little spark</a>
+<a href="https://drive.google.com/drive/folders/1A5FC5j1dGakbow9ISiFywUSPOymAXPSW" class="drive-item">กลุ่ม Vioer</a>
+<a href="https://drive.google.com/drive/folders/1e8R2bs55n3ppm4cP-DTbp7PxPBZZLi2F" class="drive-item">กลุ่ม Pikoro</a>
+</div>
+</div>
 
-    <main class="max-w-2xl mx-auto mt-6 sm:mt-10 px-4 relative z-20">
-        <div class="clean-box p-6 sm:p-10 z-0 border border-white">
-            
-            <div class="text-center mb-8 relative flex flex-col items-center">
-                <div class="relative w-28 h-28 sm:w-32 sm:h-32 mb-2 group">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-[#ff8e6e] to-[#ffb8a1] rounded-full opacity-40 blur-md transition duration-300"></div>
-                    <img src="https://i.postimg.cc/QtNFQs7G/pr-bch-d.jpg" alt="Profile" class="relative w-full h-full object-cover rounded-full border-4 border-white shadow-md z-10 transition-transform duration-300 group-hover:scale-105">
-                </div>
-                <h1 class="font-slackey text-4xl sm:text-5xl font-bold text-[#ff8e6e] text-shadow-cute mb-3 mt-3">Nori Design</h1>
-                <h2 class="font-slackey text-xl text-[#5c3a21] bg-[#fff5f0] inline-block px-6 py-1.5 rounded-full shadow-sm">Welcome to my shop</h2>
-            </div>
+<div class="section">
+<h2>📍 กฎของร้าน 📍</h2>
+<div class="rule-box">
+• โอนเงินแล้วไม่รับโอนคืนทุกกรณี<br>
+• โอนผิดโอนเกินทางร้านไม่รับผิดชอบ<br>
+• หากยกเลิกงานหลังส่งบรีฟ (งานเริ่มแล้ว) คืนเงิน 50%<br>
+• หากยกเลิกหลังเช็คงาน ไม่คืนเงินและส่งงานให้ตามปกติ<br>
+<hr style="margin:10px 0; border:0; border-top:1px dashed #ffcccc;">
+<b>ระยะเวลา:</b> ป้าย 1-2 วัน / งานเว็บ 4-8 ชม. / งานเร่ง *2 ของราคา
+</div>
+</div>
 
-            <div class="mb-10 relative rounded-3xl overflow-hidden shadow-md group">
-                <div class="slider-track" id="slider-track">
-                    <div class="slide bg-gradient-to-r from-orange-200 to-orange-100 h-40 sm:h-56 flex flex-col items-center justify-center text-center p-4">
-                        <span class="font-slackey text-2xl sm:text-3xl text-[#5c3a21] mb-2">ยินดีต้อนรับสู่ร้านโนริ</span>
-                        <span class="text-sm text-[#7b5338] bg-white/50 px-4 py-1 rounded-full">สอบถามได้นะคะ มีสะสมแต้ม🌻</span>
-                    </div>
-                    <div class="slide bg-gradient-to-r from-[#fff5f0] to-[#ffb8a1] h-40 sm:h-56 flex flex-col items-center justify-center text-center p-4">
-                        <span class="font-slackey text-2xl sm:text-3xl text-[#5c3a21] mb-2">รับทำป้าย & สติกเกอร์</span>
-                        <span class="text-sm text-[#7b5338] bg-white/50 px-4 py-1 rounded-full">งานสวย คุณภาพดี</span>
-                    </div>
-                </div>
-            </div>
+<div class="footer">
+<a href="https://www.facebook.com/nori.desing?" class="btn btn-main">ติดต่อสอบถามคลิก 🎀</a>
+<div class="socials">
+<a href="https://www.facebook.com/nori.desing?">Facebook</a>
+<a href="#">Instagram</a>
+<a href="#">LINE</a>
+</div>
+<p class="small">© 2026 Nori Design</p>
+</div>
 
-            <div id="services" class="text-center mb-10 bg-[#fff5f0] p-6 rounded-2xl border border-orange-50 shadow-sm">
-                <p class="text-[15px] sm:text-base leading-relaxed text-[#5c3a21]">
-                    ยินดีต้อนรับเข้าสู้ร้านโนริค่า สอบถามได้นะคะ มีสะสมแต้ม🌻
-                </p>
-            </div>
-
-            <div class="mb-10">
-                <h3 class="font-slackey text-2xl font-semibold mb-4 text-[#ff8e6e]">🎨 งานที่รับทำ</h3>
-                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-[15px] text-[#5c3a21]">
-                    <li class="flex items-center gap-3 bg-orange-50/50 p-2 rounded-xl"> - ทำป้าย </li>
-                    <li class="flex items-center gap-3 bg-orange-50/50 p-2 rounded-xl"> - ทำสติกเกอร์ </li>
-                    <li class="flex items-center gap-3 bg-orange-50/50 p-2 rounded-xl"> - ทำเว็บร้านค้า </li>
-                    <li class="flex items-center gap-3 bg-orange-50/50 p-2 rounded-xl"> - รับดึงเข้ากลุ่มต่างๆ </li>
-                </ul>
-            </div>
-
-            <div id="portfolio" class="mb-10 bg-[#5c3a21] rounded-2xl p-6 text-center shadow-md relative overflow-hidden">
-                <h3 class="font-slackey text-white text-2xl font-medium mb-5">รายชื่อกลุ่มทั้งหมด คลิกเลือกดู</h3>
-                <div class="flex flex-wrap justify-center gap-3 relative z-10">
-                    <button onclick="openModal('modal-bright')" class="bg-[#ff8e6e] text-white px-6 py-2.5 rounded-full text-sm font-medium border-2 border-[#ff8e6e]">กลุ่มที่ดึงเมลเอง</button>
-                    <button onclick="openModal('modal-pastel')" class="bg-[#ffb8a1] text-[#5c3a21] px-6 py-2.5 rounded-full text-sm font-medium border-2 border-[#ffb8a1]">กลุ่มแนะนำ & อื่นๆ</button>
-                    <a href="https://linkbio.co/noridesign" target="_blank" class="bg-white text-[#5c3a21] px-6 py-2.5 rounded-full text-sm font-medium border-2 border-white">ตัวอย่างกลุ่มต่างๆ</a>
-                </div>
-            </div>
-
-            <div id="pricing" class="mb-10">
-                <div class="bg-white rounded-2xl p-6 border border-orange-50 shadow-sm mt-6">
-                    <h3 class="text-center font-slackey text-2xl text-[#5c3a21] mb-5">ขั้นตอนการสั่ง (How to)</h3>
-                    <div class="space-y-4 text-[15px] text-[#7b5338]">
-                        <p>1. ดูตัวอย่างแล้วแคปรูปกลุ่มที่สนใจ ทักเฟสได้เลย</p>
-                        <p>2. รวมยอด และแจ้งโอนเงิน</p>
-                        <p>3. รอดึงเข้ากลุ่มได้เลยทันที</p>
-                    </div>
-
-                    <div class="mt-8 border-t border-orange-50 pt-6">
-                        <h4 class="font-slackey text-xl text-[#5c3a21] mb-4">📋 เงื่อนไขงานป้าย/สติกเกอร์</h4>
-                        <ul class="space-y-3 text-sm text-[#7b5338]">
-                            <li>∙ ตามปกติรองาน 1-2 วัน แล้วแต่คิว</li>
-                            <li>∙ งานเร่ง *2 ของราคา</li>
-                            <li>∙ งานเว็บรอประมาน 4-8 ชั่วโมง</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mb-10 bg-gradient-to-br from-[#ffb8a1] to-[#ff8e6e] rounded-2xl p-6 text-white shadow-md">
-                 <h3 class="text-xl font-slackey mb-3 text-[#5c3a21]">📍 กฎของร้าน 📍</h3>
-                 <div class="space-y-2 text-[14px]">
-                    <p>• โอนเงินแล้วไม่คืนเงินทุกกรณี</p>
-                    <p>• โอนผิดโอนเกินทางร้านไม่รับผิดชอบ</p>
-                    <p>• หากยกเลิกหลังส่งบรีฟ (งานเริ่มแล้ว) คืนแค่ 50%</p>
-                    <p>• ยกเลิกหลังเช็คงาน = ไม่คืน และส่งงานให้ตามปกติ</p>
-                 </div>
-            </div>
-
-            <div id="contact" class="mt-12 pt-8 border-t border-orange-100 text-center">
-                <h3 class="font-slackey text-2xl text-[#5c3a21] mb-5">ช่องทางการติดต่อ</h3>
-                <div class="flex justify-center gap-5 mb-8">
-                    <a href="https://www.facebook.com/nori.desing?" target="_blank" class="w-14 h-14 rounded-full bg-[#fff5f0] text-[#ff8e6e] flex items-center justify-center hover:bg-[#ff8e6e] hover:text-white transition shadow-sm border border-orange-100">
-                        <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
-                    </a>
-                </div>
-                <p class="text-xs text-[#ff8e6e] tracking-widest font-medium">THANK YOU FOR CHOOSING NORI DESIGN</p>
-            </div>
-        </div>
-    </main>
-    <div id="modal-bright" class="fixed inset-0 bg-black/40 backdrop-blur-sm hidden items-center justify-center z-50 px-4">
-        <div class="bg-white rounded-3xl p-6 w-full max-w-sm border border-[#ff8e6e] shadow-2xl modal-enter relative">
-            <button onclick="closeModal('modal-bright')" class="absolute top-4 right-4 text-gray-400 hover:text-orange-500 bg-gray-50 rounded-full p-1">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-            </button>
-            <h3 class="font-slackey text-xl text-center text-[#ff8e6e] mb-5">กลุ่มที่ดึงเมลเอง</h3>
-            <div class="space-y-2 max-h-[60vh] overflow-y-auto pr-2 text-sm text-[#5c3a21]">
-                <a href="https://drive.google.com/drive/folders/1YKwLAZogYhZKBWPBxGKTGVwzR3zcEDel" class="block bg-orange-50 p-3 rounded-xl hover:bg-orange-100 transition">กลุ่มนี่เส้นปะ</a>
-                <a href="https://drive.google.com/drive/folders/1Ye9suMpDDivZ45bzRfnQ0f-o1w0dEHvQ" class="block bg-orange-50 p-3 rounded-xl hover:bg-orange-100 transition">กลุ่ม INKY GROUP</a>
-                <a href="https://drive.google.com/drive/folders/1EHSj38mZ9XxLsmS1WXyrjTIOsl7sjGQK" class="block bg-orange-50 p-3 rounded-xl hover:bg-orange-100 transition">กลุ่มลายเส้น Belinda</a>
-                <a href="https://drive.google.com/drive/folders/1fItAncfAu3g91k6dYNnX7EEihn3dj4" class="block bg-orange-50 p-3 rounded-xl hover:bg-orange-100 transition">กลุ่มStill drawing v1</a>
-                <a href="https://drive.google.com/drive/folders/1V9U2f1Z9HHZmFqVR5H_H_XRo-VF-D6T5" class="block bg-orange-50 p-3 rounded-xl hover:bg-orange-100 transition">กลุ่มStill drawing v2</a>
-                <a href="https://drive.google.com/drive/folders/1EdZHXv2yzinG1-fCTeszo4IFTcEwBN1t" class="block bg-orange-50 p-3 rounded-xl hover:bg-orange-100 transition">กลุ่มMerita</a>
-                <a href="https://drive.google.com/drive/folders/1NdbzjMsB3Le66YlvXCWt6ywZI18__sVk" class="block bg-orange-50 p-3 rounded-xl hover:bg-orange-100 transition">กลุ่มCalista</a>
-                <a href="https://drive.google.com/drive/folders/117KeqfEJU-VrfHPzpAPDeNT62nvaPB7a" class="block bg-orange-50 p-3 rounded-xl hover:bg-orange-100 transition">กลุ่มJamille</a>
-                <a href="https://drive.google.com/drive/folders/1drtqFx3YBzHjnrjt-BrzdZm5FFlyBCKW" class="block bg-orange-50 p-3 rounded-xl hover:bg-orange-100 transition">กลุ่มPancake</a>
-                <a href="https://drive.google.com/drive/folders/1lWfTHqAbVoZH2YveT70TO5pmfiikwY3G" class="block bg-orange-50 p-3 rounded-xl hover:bg-orange-100 transition">กลุ่มQueen pop</a>
-                <a href="https://drive.google.com/drive/folders/1ijU1i-CNAZgKTul6lmiN6VIDsPwVU2sd" class="block bg-orange-50 p-3 rounded-xl hover:bg-orange-100 transition">กลุ่มHormony</a>
-                <a href="https://drive.google.com/drive/folders/1pgnqUzdmjW7vK0s_fNCV0SY6-S-FHOzp" class="block bg-orange-50 p-3 rounded-xl hover:bg-orange-100 transition">กลุ่มMoonie</a>
-                <a href="https://drive.google.com/drive/folders/1LaYCivILFAjqKgnzTMJJ5RlRXZgB9YWf" class="block bg-orange-50 p-3 rounded-xl hover:bg-orange-100 transition">กลุ่มFusion</a>
-                <a href="https://drive.google.com/drive/folders/1CrGdw6jr_cYcRr2LXKq_yhrkMvna8fVX" class="block bg-orange-50 p-3 rounded-xl hover:bg-orange-100 transition">กลุ่มkawaii Fuji</a>
-                <a href="https://drive.google.com/drive/folders/13zR7r66v8hO-rD2t6LahxD1f9Mc8J1Ue" class="block bg-orange-50 p-3 rounded-xl hover:bg-orange-100 transition">กลุ่มTeaching group</a>
-                <a href="https://drive.google.com/drive/folders/1d6IxpNl4zajE7XP-W2KJ17wkGPkG11uj" class="block bg-orange-50 p-3 rounded-xl hover:bg-orange-100 transition">กลุ่มMitarashi</a>
-                <a href="https://drive.google.com/drive/folders/1cV7jkDmRh1VD-nD_I-VDsW__zUzSFYYQ" class="block bg-orange-50 p-3 rounded-xl hover:bg-orange-100 transition">กลุ่มJainoy</a>
-                <a href="https://drive.google.com/drive/folders/1skKUNZSFr1cE_PQwmk5dG-26zjnaRq9J" class="block bg-orange-50 p-3 rounded-xl hover:bg-orange-100 transition">กลุ่มฟุคุเนโกะ</a>
-                <a href="https://drive.google.com/drive/folders/1KE9lcHUTP5sS8csxiCD9shzwH3dW9gzV" class="block bg-orange-50 p-3 rounded-xl hover:bg-orange-100 transition">กลุ่มGlitter magic</a>
-                <a href="https://drive.google.com/drive/folders/1Ufh9MFi49FBX00bPe05pXAtlWMdG3-0k" class="block bg-orange-50 p-3 rounded-xl hover:bg-orange-100 transition">กลุ่มแมวดำ</a>
-                <a href="https://drive.google.com/drive/folders/1_szs-_HaCJMy6hBb7N4_dDVzZW4jkQoS" class="block bg-orange-50 p-3 rounded-xl hover:bg-orange-100 transition">กลุ่มJellybunnie v2</a>
-                <a href="https://drive.google.com/drive/folders/1QGC5IfTfafn6s0OFwhW17p92fwpAs2fx" class="block bg-orange-50 p-3 rounded-xl hover:bg-orange-100 transition">กลุ่มJellybunnie v1</a>
-                <a href="https://drive.google.com/drive/folders/10YI5_ZXufqnMh896HnB2Z6LD888Imh-0" class="block bg-orange-50 p-3 rounded-xl hover:bg-orange-100 transition">กลุ่มนุบนิบบรัช</a>
-                <a href="https://drive.google.com/drive/folders/1mDzXfPna4LjDyzU8jRJT9-LQykywM1YZ" class="block bg-orange-50 p-3 rounded-xl hover:bg-orange-100 transition">กลุ่มTrick sticker by nes</a>
-                <a href="https://drive.google.com/drive/folders/1VG-NqauROtZhjzgYePtfd6TI3XsKry7f" class="block bg-orange-50 p-3 rounded-xl hover:bg-orange-100 transition">กลุ่มSugar plum v1</a>
-                <a href="https://drive.google.com/drive/folders/1IhgsHW0niXL1P7TN-muEteDPSe7lPEwq" class="block bg-orange-50 p-3 rounded-xl hover:bg-orange-100 transition">กลุ่มSugar plum v2</a>
-                <a href="https://drive.google.com/drive/folders/1-TTWSUqSELb80zXcnYaZaYxTyGRLio5W" class="block bg-orange-50 p-3 rounded-xl hover:bg-orange-100 transition">กลุ่มkuromi box</a>
-                <a href="https://drive.google.com/drive/folders/1g565WGi56qOg09APdgYthQPRZYHsQ9pf" class="block bg-orange-50 p-3 rounded-xl hover:bg-orange-100 transition">กลุ่มLittle spark</a>
-                <a href="https://drive.google.com/drive/folders/1A5FC5j1dGakbow9ISiFywUSPOymAXPSW?usp=drive_link" class="block bg-orange-50 p-3 rounded-xl hover:bg-orange-100 transition">กลุ่มVioer</a>
-                <a href="https://drive.google.com/drive/folders/1e8R2bs55n3ppm4cP-DTbp7PxPBZZLi2F" class="block bg-orange-50 p-3 rounded-xl hover:bg-orange-100 transition">กลุ่มPikoro</a>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal-pastel" class="fixed inset-0 bg-black/40 backdrop-blur-sm hidden items-center justify-center z-50 px-4">
-        <div class="bg-white rounded-3xl p-6 w-full max-w-sm border border-[#ffb8a1] shadow-2xl relative">
-            <button onclick="closeModal('modal-pastel')" class="absolute top-4 right-4 text-gray-400 hover:text-orange-300 bg-gray-50 rounded-full p-1">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-            </button>
-            <h3 class="font-slackey text-xl text-center text-[#ffb8a1] mb-5">📍 กลุ่มแนะนำ</h3>
-            <div class="space-y-2 max-h-[60vh] overflow-y-auto pr-2 text-sm text-[#5c3a21]">
-                <a href="https://drive.google.com/drive/folders/18wz_Hx9Iik7YGXZK4nOi8i2z1IdcZOg6" class="block bg-[#fff5f0] p-3 rounded-xl border border-orange-100 hover:bg-orange-50 transition">กลุ่มSerabies 🌈</a>
-                <a href="https://shorturl.asia/zVTa9" class="block bg-[#fff5f0] p-3 rounded-xl border border-orange-100 hover:bg-orange-50 transition">กลุ่มRosella 🌈</a>
-                <a href="https://drive.google.com/drive/folders/1O5mfoZTg1Ecoh99PsIz3EEgAWvAWUc0Q" class="block bg-[#fff5f0] p-3 rounded-xl border border-orange-100 hover:bg-orange-50 transition">กลุ่มKelbies v1 🌈</a>
-                <a href="https://drive.google.com/drive/folders/1v7GevdSytdczmDmOlQ7tF3AEOunTHqBc" class="block bg-[#fff5f0] p-3 rounded-xl border border-orange-100 hover:bg-orange-50 transition">กลุ่มKelbies v2 🌈</a>
-                <a href="https://drive.google.com/drive/folders/1ymzwaJGDlrMyp7JJB9kkJMl4bH8utyz7" class="block bg-[#fff5f0] p-3 rounded-xl border border-orange-100 hover:bg-orange-50 transition">กลุ่มKellynori v1 🌈</a>
-                <a href="https://drive.google.com/drive/folders/1MJ9SuXIzyz3_alVFNA_HQ3oMULjRpQdQ" class="block bg-[#fff5f0] p-3 rounded-xl border border-orange-100 hover:bg-orange-50 transition">กลุ่มkellynori v2 🌈</a>
-                <a href="https://drive.google.com/drive/folders/1hiHUQv2oRy2SQCMefPAiKjR3iNjoPlyT" class="block bg-[#fff5f0] p-3 rounded-xl border border-orange-100 hover:bg-orange-50 transition">กลุ่มlittle baby 🌈</a>
-                <a href="https://drive.google.com/drive/folders/14RG7Br-1PVr8K76cb2gnQZgDacK6Hp6Q" class="block bg-[#fff5f0] p-3 rounded-xl border border-orange-100 hover:bg-orange-50 transition">กลุ่มmiracle effect v1 🌈</a>
-                <a href="https://drive.google.com/drive/folders/11Pq2C3rt8CIBbhV7Pn-IXYmahdmjRR7n" class="block bg-[#fff5f0] p-3 rounded-xl border border-orange-100 hover:bg-orange-50 transition">กลุ่มmiracle effect v2 🌈</a>
-                <a href="https://drive.google.com/drive/folders/1cgM-RKOiolqM8g8bH3AjN9GeEPyUxUYH" class="block bg-[#fff5f0] p-3 rounded-xl border border-orange-100 hover:bg-orange-50 transition">กลุ่มสอนวาดฮาวคิ้ว 🌈</a>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // ✨ Emoji Falling System
-        function createEmoji() {
-            const container = document.getElementById('emoji-container');
-            const emojis = ['🩷', '🧡', '✨'];
-            const emoji = document.createElement('div');
-            emoji.className = 'falling-emoji';
-            emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
-            emoji.style.left = Math.random() * 100 + "vw";
-            const duration = Math.random() * 4 + 6;
-            emoji.style.animationDuration = duration + "s";
-            container.appendChild(emoji);
-            setTimeout(() => { emoji.remove(); }, duration * 1000);
-        }
-        setInterval(createEmoji, 800);
-
-        // Sidebar Functions
-        function toggleMenu() {
-            const menu = document.getElementById('side-menu');
-            const overlay = document.getElementById('menu-overlay');
-            if (menu.classList.contains('-translate-x-full')) {
-                menu.classList.remove('-translate-x-full');
-                overlay.classList.remove('hidden');
-                setTimeout(() => overlay.classList.remove('opacity-0'), 10);
-            } else {
-                menu.classList.add('-translate-x-full');
-                overlay.classList.add('opacity-0');
-                setTimeout(() => overlay.classList.add('hidden'), 300);
-            }
-        }
-
-        // Modal Functions
-        function openModal(id) {
-            const modal = document.getElementById(id);
-            modal.style.display = 'flex';
-            modal.classList.remove('hidden');
-        }
-        function closeModal(id) {
-            const modal = document.getElementById(id);
-            modal.classList.add('hidden');
-            modal.style.display = 'none';
-        }
-
-        // Slider Functions
-        let currentSlide = 0;
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % 2;
-            const track = document.getElementById('slider-track');
-            if(track) track.style.transform = `translateX(-${currentSlide * 100}%)`;
-        }
-        setInterval(nextSlide, 4000);
-    </script>
+</div>
 </body>
 </html>
