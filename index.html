@@ -65,8 +65,13 @@ h1,h2,h3{color:var(--dark);margin-bottom:15px;}
 .socials{display:flex;gap:8px;justify-content:center;margin-top:15px;}
 .socials a{flex:1;max-width:100px;text-align:center;padding:8px;border-radius:25px;background:#fff;text-decoration:none;color:var(--dark);font-size:13px;border:1px solid #ffeef5;}
 .small{font-size:12px;opacity:.7;margin-top:10px;}
-.drive-grid{display:grid;grid-template-columns: 1fr;gap:10px;margin-top:15px;}
-.drive-item{background:#fffaf0;padding:12px;border-radius:15px;text-decoration:none;color:var(--dark);font-size:13px;border:1px solid #ffe0cc;display:flex;justify-content:space-between;align-items:center;}
+
+/* --- Grid รูปภาพคู่กัน --- */
+.drive-grid{display:grid;grid-template-columns: 1fr 1fr;gap:10px;margin-top:15px;}
+.drive-item{background:#fffaf0;border-radius:15px;text-decoration:none;color:var(--dark);font-size:11px;border:1px solid #ffe0cc;display:flex;flex-direction:column;overflow:hidden;text-align:center;}
+.drive-item img{width:100%;aspect-ratio:1/1;object-fit:cover;border-bottom:1px solid #ffe0cc;}
+.drive-item span{padding:8px 5px;display:block;font-weight:500;}
+
 .rule-box{background:#fff5f5;padding:15px;border-radius:15px;font-size:13px;border:1px solid #ffcccc;margin-top:15px;line-height:1.6;}
 </style>
 </head>
@@ -103,50 +108,88 @@ h1,h2,h3{color:var(--dark);margin-bottom:15px;}
 <div class="section">
 <h2>📍 กลุ่มแนะนำต้องมี 🌈</h2>
 <div class="drive-grid">
-<a href="https://drive.google.com/drive/folders/18wz_Hx9Iik7YGXZK4nOi8i2z1IdcZOg6" class="drive-item">กลุ่ม Serabies <span>เปิด ></span></a>
-<a href="https://shorturl.asia/zVTa9" class="drive-item">กลุ่ม Rosella <span>เปิด ></span></a>
-<a href="https://drive.google.com/drive/folders/1O5mfoZTg1Ecoh99PsIz3EEgAWvAWUc0Q" class="drive-item">กลุ่ม Kelbies v1 <span>เปิด ></span></a>
-<a href="https://drive.google.com/drive/folders/1v7GevdSytdczmDmOlQ7tF3AEOunTHqBc" class="drive-item">กลุ่ม Kelbies v2 <span>เปิด ></span></a>
-<a href="https://drive.google.com/drive/folders/1ymzwaJGDlrMyp7JJB9kkJMl4bH8utyz7" class="drive-item">กลุ่ม Kellynori v1 <span>เปิด ></span></a>
-<a href="https://drive.google.com/drive/folders/1MJ9SuXIzyz3_alVFNA_HQ3oMULjRpQdQ" class="drive-item">กลุ่ม kellynori v2 <span>เปิด ></span></a>
-<a href="https://drive.google.com/drive/folders/1hiHUQv2oRy2SQCMefPAiKjR3iNjoPlyT" class="drive-item">กลุ่ม little baby <span>เปิด ></span></a>
-<a href="https://drive.google.com/drive/folders/14RG7Br-1PVr8K76cb2gnQZgDacK6Hp6Q" class="drive-item">กลุ่ม miracle effect v1 <span>เปิด ></span></a>
-<a href="https://drive.google.com/drive/folders/11Pq2C3rt8CIBbhV7Pn-IXYmahdmjRR7n" class="drive-item">กลุ่ม miracle effect v2 <span>เปิด ></span></a>
-<a href="https://drive.google.com/drive/folders/1cgM-RKOiolqM8g8bH3AjN9GeEPyUxUYH" class="drive-item">กลุ่มสอนวาดฮาวคิ้ว <span>เปิด ></span></a>
+<a href="https://drive.google.com/drive/folders/18wz_Hx9Iik7YGXZK4nOi8i2z1IdcZOg6" class="drive-item">
+    <img src="https://i.postimg.cc/0ySNPBpY/att-Gle-UAy-INh-IVTOAFH4nb-Or-C-e-UArc-N7Pcr-J5ngv6NPY8.jpg"><span>Serabies Box</span></a>
+<a href="https://shorturl.asia/zVTa9" class="drive-item">
+    <img src="https://i.postimg.cc/90vjkcg8/att-x3zw-sg-Ge-HCLy-yf-Dk6V-dulha-Lw-Cb-Aa9x-REHSct8.jpg"><span>Rosella</span></a>
+<a href="https://drive.google.com/drive/folders/1O5mfoZTg1Ecoh99PsIz3EEgAWvAWUc0Q" class="drive-item">
+    <img src="https://i.postimg.cc/ZnmDX1Y8/mi-m-ch-x-230-20260310153044.png"><span>Kelbies v1</span></a>
+<a href="https://drive.google.com/drive/folders/1v7GevdSytdczmDmOlQ7tF3AEOunTHqBc" class="drive-item">
+    <img src="https://i.postimg.cc/gkYyw3MM/att-yc-C6Ki-LKU-R18v-Inz-H7na2vtmo3txrjk-ISBN8Cs-Kp-Wo.jpg"><span>Kelbies v2</span></a>
+<a href="https://drive.google.com/drive/folders/1ymzwaJGDlrMyp7JJB9kkJMl4bH8utyz7" class="drive-item">
+    <img src="https://i.postimg.cc/j2Rf7rhq/att-wdcvr-Ovir4-Wl-IV0EVEw-dg-Sm2H7-26HBoh-FMVYZ-ZQ.jpg"><span>Kellynori v1</span></a>
+<a href="https://drive.google.com/drive/folders/1MJ9SuXIzyz3_alVFNA_HQ3oMULjRpQdQ" class="drive-item">
+    <img src="https://i.postimg.cc/15CFf2Vy/att-G7TBRf-Rbaa-Whodx-V3b-OQVrhn-KVVTa-IAcr-o-ZZn276U8.jpg"><span>Kellynori v2</span></a>
+<a href="https://drive.google.com/drive/folders/1hiHUQv2oRy2SQCMefPAiKjR3iNjoPlyT" class="drive-item">
+    <img src="https://i.postimg.cc/SxnzbRvr/mi-m-ch-x-230-20260310153314.png"><span>Little Baby</span></a>
+<a href="https://drive.google.com/drive/folders/14RG7Br-1PVr8K76cb2gnQZgDacK6Hp6Q" class="drive-item">
+    <img src="https://i.postimg.cc/xTw9qddB/mi-m-ch-x-230-20260310151157.png"><span>Miracle v1</span></a>
+<a href="https://drive.google.com/drive/folders/11Pq2C3rt8CIBbhV7Pn-IXYmahdmjRR7n" class="drive-item">
+    <img src="https://i.postimg.cc/9Q9FB7SQ/mi-m-ch-x-230-20260310155255.png"><span>Miracle v2</span></a>
+<a href="https://drive.google.com/drive/folders/1cgM-RKOiolqM8g8bH3AjN9GeEPyUxUYH" class="drive-item">
+    <img src="https://i.postimg.cc/3wPXcmrL/mi-m-ch-x-251-20260313194240.png"><span>สอนวาดฮาวคิ้ว</span></a>
 </div>
 
 <h2 style="margin-top:25px;">📁 รวมกลุ่มดึงเมลเอง</h2>
 <div class="drive-grid">
-<a href="https://drive.google.com/drive/folders/1YKwLAZogYhZKBWPBxGKTGVwzR3zcEDel" class="drive-item" style="border: 1px solid var(--main); background: #fffcfd;">⭐ กลุ่มนี่เส้นปะ (แนะนำ)</a>
-<a href="https://drive.google.com/drive/folders/1Ye9suMpDDivZ45bzRfnQ0f-o1w0dEHvQ" class="drive-item">INKY GROUP</a>
-<a href="https://drive.google.com/drive/folders/1EHSj38mZ9XxLsmS1WXyrjTIOsl7sjGQK" class="drive-item">กลุ่มลายเส้น Belinda</a>
-<a href="https://drive.google.com/drive/folders/1fItAncfAu3g91k6dYNnX7EEihn3dj4kS" class="drive-item">Still drawing v1</a>
-<a href="https://drive.google.com/drive/folders/1V9U2f1Z9HHZmFqVR5H_H_XRo-VF-D6T5" class="drive-item">Still drawing v2</a>
-<a href="https://drive.google.com/drive/folders/1EdZHXv2yzinG1-fCTeszo4IFTcEwBN1t" class="drive-item">กลุ่ม Merita</a>
-<a href="https://drive.google.com/drive/folders/1NdbzjMsB3Le66YlvXCWt6ywZI18__sVk" class="drive-item">กลุ่ม Calista</a>
-<a href="https://drive.google.com/drive/folders/117KeqfEJU-VrfHPzpAPDeNT62nvaPB7a" class="drive-item">กลุ่ม Jamille</a>
-<a href="https://drive.google.com/drive/folders/1drtqFx3YBzHjnrjt-BrzdZm5FFlyBCKW" class="drive-item">กลุ่ม Pancake</a>
-<a href="https://drive.google.com/drive/folders/1lWfTHqAbVoZH2YveT70TO5pmfiikwY3G" class="drive-item">กลุ่ม Queen pop</a>
-<a href="https://drive.google.com/drive/folders/1ijU1i-CNAZgKTul6lmiN6VIDsPwVU2sd" class="drive-item">กลุ่ม Hormony</a>
-<a href="https://drive.google.com/drive/folders/1pgnqUzdmjW7vK0s_fNCV0SY6-S-FHOzp" class="drive-item">กลุ่ม Moonie</a>
-<a href="https://drive.google.com/drive/folders/1LaYCivILFAjqKgnzTMJJ5RlRXZgB9YWf" class="drive-item">กลุ่ม Fusion</a>
-<a href="https://drive.google.com/drive/folders/1CrGdw6jr_cYcRr2LXKq_yhrkMvna8fVX" class="drive-item">กลุ่ม kawaii Fuji</a>
-<a href="https://drive.google.com/drive/folders/13zR7r66v8hO-rD2t6LahxD1f9Mc8J1Ue" class="drive-item">กลุ่ม Teaching group</a>
-<a href="https://drive.google.com/drive/folders/1d6IxpNl4zajE7XP-W2KJ17wkGPkG11uj" class="drive-item">กลุ่ม Mitarashi</a>
-<a href="https://drive.google.com/drive/folders/1cV7jkDmRh1VD-nD_I-VDsW__zUzSFYYQ" class="drive-item">กลุ่ม Jainoy</a>
-<a href="https://drive.google.com/drive/folders/1skKUNZSFr1cE_PQwmk5dG-26zjnaRq9J" class="drive-item">กลุ่มฟุคุเนโกะ</a>
-<a href="https://drive.google.com/drive/folders/1KE9lcHUTP5sS8csxiCD9shzwH3dW9gzV" class="drive-item">กลุ่ม Glitter magic</a>
-<a href="https://drive.google.com/drive/folders/1Ufh9MFi49FBX00bPe05pXAtlWMdG3-0k" class="drive-item">กลุ่มแมวดำ</a>
-<a href="https://drive.google.com/drive/folders/1_szs-_HaCJMy6hBb7N4_dDVzZW4jkQoS" class="drive-item">Jellybunnie v2</a>
-<a href="https://drive.google.com/drive/folders/1QGC5IfTfafn6s0OFwhW17p92fwpAs2fx" class="drive-item">Jellybunnie v1</a>
-<a href="https://drive.google.com/drive/folders/10YI5_ZXufqnMh896HnB2Z6LD888Imh-0" class="drive-item">กลุ่มนุบนิบบรัช</a>
-<a href="https://drive.google.com/drive/folders/1mDzXfPna4LjDyzU8jRJT9-LQykywM1YZ" class="drive-item">Trick sticker by nes</a>
-<a href="https://drive.google.com/drive/folders/1VG-NqauROtZhjzgYePtfd6TI3XsKry7f" class="drive-item">Sugar plum v1</a>
-<a href="https://drive.google.com/drive/folders/1IhgsHW0niXL1P7TN-muEteDPSe7lPEwq" class="drive-item">Sugar plum v2</a>
-<a href="https://drive.google.com/drive/folders/1-TTWSUqSELb80zXcnYaZaYxTyGRLio5W" class="drive-item">กลุ่ม kuromi box</a>
-<a href="https://drive.google.com/drive/folders/1g565WGi56qOg09APdgYthQPRZYHsQ9pf" class="drive-item">กลุ่ม Little spark</a>
-<a href="https://drive.google.com/drive/folders/1A5FC5j1dGakbow9ISiFywUSPOymAXPSW" class="drive-item">กลุ่ม Vioer</a>
-<a href="https://drive.google.com/drive/folders/1e8R2bs55n3ppm4cP-DTbp7PxPBZZLi2F" class="drive-item">กลุ่ม Pikoro</a>
+<a href="https://drive.google.com/drive/folders/1YKwLAZogYhZKBWPBxGKTGVwzR3zcEDel" class="drive-item">
+    <img src="https://i.postimg.cc/4NTmZ4r9/IMG-0690.jpg"><span>กลุ่มนี่เส้นป่ะ</span></a>
+<a href="https://drive.google.com/drive/folders/1Ye9suMpDDivZ45bzRfnQ0f-o1w0dEHvQ" class="drive-item">
+    <img src="https://i.postimg.cc/L4PpHtpr/D3AF8DC0-E077-4CF9-BC5E-DA4F793B823B.jpg"><span>INKY GROUP</span></a>
+<a href="https://drive.google.com/drive/folders/1EHSj38mZ9XxLsmS1WXyrjTIOsl7sjGQK" class="drive-item">
+    <img src="https://i.postimg.cc/WzNC6kdd/IMG-9847.jpg"><span>Belinda</span></a>
+<a href="https://drive.google.com/drive/folders/1fItAncfAu3g91k6dYNnX7EEihn3dj4kS" class="drive-item">
+    <img src="https://i.postimg.cc/nVQf2vSX/4DBD5B4E-8F00-40EC-9E19-561D8015B380.jpg"><span>Still Drawing v1</span></a>
+<a href="https://drive.google.com/drive/folders/1V9U2f1Z9HHZmFqVR5H_H_XRo-VF-D6T5" class="drive-item">
+    <img src="https://i.postimg.cc/bNs8K7v1/mi-m-ch-x-209-20260208102857.png"><span>Still Drawing v2</span></a>
+<a href="https://drive.google.com/drive/folders/1NdbzjMsB3Le66YlvXCWt6ywZI18__sVk" class="drive-item">
+    <img src="https://i.postimg.cc/NGRjNq5Y/402B7445-6728-4F7B-82F4-905E9296008C.jpg"><span>Calista</span></a>
+<a href="https://drive.google.com/drive/folders/117KeqfEJU-VrfHPzpAPDeNT62nvaPB7a" class="drive-item">
+    <img src="https://i.postimg.cc/4ddp64JZ/att-p8X8tf-Vs5HHh-Fyen2EHhoxqx-P3s6ku-Q-ct4s-Yi5m26A.jpg"><span>Jamille</span></a>
+<a href="https://drive.google.com/drive/folders/1drtqFx3YBzHjnrjt-BrzdZm5FFlyBCKW" class="drive-item">
+    <img src="https://i.postimg.cc/wxRmgGMZ/IMG-0923.jpg"><span>Pancake</span></a>
+<a href="https://drive.google.com/drive/folders/1lWfTHqAbVoZH2YveT70TO5pmfiikwY3G" class="drive-item">
+    <img src="https://i.postimg.cc/zXv9PTGQ/IMG-1322.jpg"><span>Queen Pop</span></a>
+<a href="https://drive.google.com/drive/folders/1ijU1i-CNAZgKTul6lmiN6VIDsPwVU2sd" class="drive-item">
+    <img src="https://i.postimg.cc/jjn8zhvc/mi-m-ch-x-8-20260404131206.png"><span>Harmony</span></a>
+<a href="https://drive.google.com/drive/folders/1pgnqUzdmjW7vK0s_fNCV0SY6-S-FHOzp" class="drive-item">
+    <img src="https://i.postimg.cc/MKdy8hKs/mi-m-ch-x-230-20260310203249.png"><span>Moonie</span></a>
+<a href="https://drive.google.com/drive/folders/1LaYCivILFAjqKgnzTMJJ5RlRXZgB9YWf" class="drive-item">
+    <img src="https://i.postimg.cc/SKKGrfrZ/mi-m-ch-x-225-20260220112659.png"><span>Fusion</span></a>
+<a href="https://drive.google.com/drive/folders/1CrGdw6jr_cYcRr2LXKq_yhrkMvna8fVX" class="drive-item">
+    <img src="https://i.postimg.cc/XNLgBh4y/IMG-1324.jpg"><span>Kawaii Fuji</span></a>
+<a href="https://drive.google.com/drive/folders/13zR7r66v8hO-rD2t6LahxD1f9Mc8J1Ue" class="drive-item">
+    <img src="https://i.postimg.cc/KYRmyCfs/34095E6F-A7F5-47B1-997F-21D8B4F9DF07.jpg"><span>Teaching Group</span></a>
+<a href="https://drive.google.com/drive/folders/1d6IxpNl4zajE7XP-W2KJ17wkGPkG11uj" class="drive-item">
+    <img src="https://i.postimg.cc/657Yscxs/IMG-8753.jpg"><span>Mitarashi</span></a>
+<a href="https://drive.google.com/drive/folders/1cV7jkDmRh1VD-nD_I-VDsW__zUzSFYYQ" class="drive-item">
+    <img src="https://i.postimg.cc/LXbr7ygp/mi-m-ch-x-210-20260306131359.png"><span>Jainoy</span></a>
+<a href="https://drive.google.com/drive/folders/1skKUNZSFr1cE_PQwmk5dG-26zjnaRq9J" class="drive-item">
+    <img src="https://i.postimg.cc/mDXtBQWk/IMG-1323.jpg"><span>ฟุคุเนโกะ</span></a>
+<a href="https://drive.google.com/drive/folders/1KE9lcHUTP5sS8csxiCD9shzwH3dW9gzV" class="drive-item">
+    <img src="https://i.postimg.cc/J0CJ9NNV/IMG-6637.jpg"><span>Glitter Magic</span></a>
+<a href="https://drive.google.com/drive/folders/1Ufh9MFi49FBX00bPe05pXAtlWMdG3-0k" class="drive-item">
+    <img src="https://i.postimg.cc/bwZJ9GnV/IMG-6638.jpg"><span>กลุ่มแมวดำ</span></a>
+<a href="https://drive.google.com/drive/folders/1_szs-_HaCJMy6hBb7N4_dDVzZW4jkQoS" class="drive-item">
+    <img src="https://i.postimg.cc/15t5ygvz/IMG-6636.jpg"><span>Jellybunnie v2</span></a>
+<a href="https://drive.google.com/drive/folders/1QGC5IfTfafn6s0OFwhW17p92fwpAs2fx" class="drive-item">
+    <img src="https://i.postimg.cc/Rh80k45c/75C6487B-CC41-42BE-94F0-4E0EAB356111.jpg"><span>Jellybunnie v1</span></a>
+<a href="https://drive.google.com/drive/folders/10YI5_ZXufqnMh896HnB2Z6LD888Imh-0" class="drive-item">
+    <img src="https://i.postimg.cc/3N9XmyvV/6ADA330A-D064-4D9A-A39C-48E233EEA3EA.jpg"><span>นุบนิบบรัช</span></a>
+<a href="https://drive.google.com/drive/folders/1mDzXfPna4LjDyzU8jRJT9-LQykywM1YZ" class="drive-item">
+    <img src="https://i.postimg.cc/DzbT8LGT/IMG-0367.jpg"><span>Trick Sticker</span></a>
+<a href="https://drive.google.com/drive/folders/1VG-NqauROtZhjzgYePtfd6TI3XsKry7f" class="drive-item">
+    <img src="https://i.postimg.cc/X738Wfft/mi-m-ch-x-198-20260306115332.png"><span>Sugar Plum v1</span></a>
+<a href="https://drive.google.com/drive/folders/1IhgsHW0niXL1P7TN-muEteDPSe7lPEwq" class="drive-item">
+    <img src="https://i.postimg.cc/qMdmRVTW/mi-m-ch-x-251-20260319222852.png"><span>Sugar Plum v2</span></a>
+<a href="https://drive.google.com/drive/folders/1-TTWSUqSELb80zXcnYaZaYxTyGRLio5W" class="drive-item">
+    <img src="https://i.postimg.cc/13sYWx7P/mi-m-ch-x-210-20260306134602.png"><span>Kuromi Box</span></a>
+<a href="https://drive.google.com/drive/folders/1g565WGi56qOg09APdgYthQPRZYHsQ9pf" class="drive-item">
+    <img src="https://i.postimg.cc/bJC6rsq9/mi-m-ch-x-230-20260310153533.png"><span>Little Spark</span></a>
+<a href="https://drive.google.com/drive/folders/1A5FC5j1dGakbow9ISiFywUSPOymAXPSW" class="drive-item">
+    <img src="https://i.postimg.cc/vHBgFhqh/att-Pq-Ap-c6YBh-LNi-p-GWf-XCRsig2RSzk-Lj-Xcgfj-LOz3to-A.jpg"><span>Vioer</span></a>
+<a href="https://drive.google.com/drive/folders/1e8R2bs55n3ppm4cP-DTbp7PxPBZZLi2F" class="drive-item">
+    <img src="https://i.postimg.cc/9XksqrWD/IMG-8296.jpg"><span>Pikoro</span></a>
 </div>
 </div>
 
