@@ -66,11 +66,12 @@ h1,h2,h3{color:var(--dark);margin-bottom:15px;}
 .socials a{flex:1;max-width:100px;text-align:center;padding:8px;border-radius:25px;background:#fff;text-decoration:none;color:var(--dark);font-size:13px;border:1px solid #ffeef5;}
 .small{font-size:12px;opacity:.7;margin-top:10px;}
 
-/* --- Grid รูปภาพคู่กัน --- */
+/* --- ปรับแต่ง Grid แสดงผลคู่กันสำหรับมือถือ --- */
 .drive-grid{display:grid;grid-template-columns: 1fr 1fr;gap:10px;margin-top:15px;}
-.drive-item{background:#fffaf0;border-radius:15px;text-decoration:none;color:var(--dark);font-size:11px;border:1px solid #ffe0cc;display:flex;flex-direction:column;overflow:hidden;text-align:center;}
+.drive-item{background:#fffaf0;border-radius:15px;text-decoration:none;color:var(--dark);font-size:11px;border:1px solid #ffe0cc;display:flex;flex-direction:column;overflow:hidden;text-align:center;transition:0.2s;}
+.drive-item:active{transform:scale(0.98);}
 .drive-item img{width:100%;aspect-ratio:1/1;object-fit:cover;border-bottom:1px solid #ffe0cc;}
-.drive-item span{padding:8px 5px;display:block;font-weight:500;}
+.drive-item span{padding:8px 5px;display:block;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 
 .rule-box{background:#fff5f5;padding:15px;border-radius:15px;font-size:13px;border:1px solid #ffcccc;margin-top:15px;line-height:1.6;}
 </style>
@@ -80,7 +81,7 @@ h1,h2,h3{color:var(--dark);margin-bottom:15px;}
 
 <div class="container">
 <div class="section center" style="border:none;box-shadow:none;background:transparent;">
-<div class="logo"><img src="https://i.postimg.cc/QtNFQs7G/pr-bch-d.jpg" alt="Nori Design Logo"></div>
+<div class="logo"><img src="https://i.postimg.cc/QtNFQs7G/pr-bch-d.jpg" alt="logo"></div>
 <h1>Nori Design</h1>
 <p style="color:var(--dark);opacity:.8;margin:10px 0 20px;">ยินดีต้อนรับเข้าสู้ร้านโนริค่า สอบถามได้นะคะ มีสะสมแต้ม🌻</p>
 <div class="badges">
@@ -121,11 +122,11 @@ h1,h2,h3{color:var(--dark);margin-bottom:15px;}
 <a href="https://drive.google.com/drive/folders/1MJ9SuXIzyz3_alVFNA_HQ3oMULjRpQdQ" class="drive-item">
     <img src="https://i.postimg.cc/15CFf2Vy/att-G7TBRf-Rbaa-Whodx-V3b-OQVrhn-KVVTa-IAcr-o-ZZn276U8.jpg"><span>Kellynori v2</span></a>
 <a href="https://drive.google.com/drive/folders/1hiHUQv2oRy2SQCMefPAiKjR3iNjoPlyT" class="drive-item">
-    <img src="https://i.postimg.cc/SxnzbRvr/mi-m-ch-x-230-20260310153314.png"><span>Little Baby</span></a>
+    <img src="https://i.postimg.cc/SxnzbRvr/mi-m-ch-x-230-20260310153314.png"><span>little baby</span></a>
 <a href="https://drive.google.com/drive/folders/14RG7Br-1PVr8K76cb2gnQZgDacK6Hp6Q" class="drive-item">
-    <img src="https://i.postimg.cc/xTw9qddB/mi-m-ch-x-230-20260310151157.png"><span>Miracle v1</span></a>
+    <img src="https://i.postimg.cc/xTw9qddB/mi-m-ch-x-230-20260310151157.png"><span>miracle effect v1</span></a>
 <a href="https://drive.google.com/drive/folders/11Pq2C3rt8CIBbhV7Pn-IXYmahdmjRR7n" class="drive-item">
-    <img src="https://i.postimg.cc/9Q9FB7SQ/mi-m-ch-x-230-20260310155255.png"><span>Miracle v2</span></a>
+    <img src="https://i.postimg.cc/9Q9FB7SQ/mi-m-ch-x-230-20260310155255.png"><span>miracle effect v2</span></a>
 <a href="https://drive.google.com/drive/folders/1cgM-RKOiolqM8g8bH3AjN9GeEPyUxUYH" class="drive-item">
     <img src="https://i.postimg.cc/3wPXcmrL/mi-m-ch-x-251-20260313194240.png"><span>สอนวาดฮาวคิ้ว</span></a>
 </div>
@@ -139,9 +140,9 @@ h1,h2,h3{color:var(--dark);margin-bottom:15px;}
 <a href="https://drive.google.com/drive/folders/1EHSj38mZ9XxLsmS1WXyrjTIOsl7sjGQK" class="drive-item">
     <img src="https://i.postimg.cc/WzNC6kdd/IMG-9847.jpg"><span>Belinda</span></a>
 <a href="https://drive.google.com/drive/folders/1fItAncfAu3g91k6dYNnX7EEihn3dj4kS" class="drive-item">
-    <img src="https://i.postimg.cc/nVQf2vSX/4DBD5B4E-8F00-40EC-9E19-561D8015B380.jpg"><span>Still Drawing v1</span></a>
+    <img src="https://i.postimg.cc/nVQf2vSX/4DBD5B4E-8F00-40EC-9E19-561D8015B380.jpg"><span>Still drawing v1</span></a>
 <a href="https://drive.google.com/drive/folders/1V9U2f1Z9HHZmFqVR5H_H_XRo-VF-D6T5" class="drive-item">
-    <img src="https://i.postimg.cc/bNs8K7v1/mi-m-ch-x-209-20260208102857.png"><span>Still Drawing v2</span></a>
+    <img src="https://i.postimg.cc/bNs8K7v1/mi-m-ch-x-209-20260208102857.png"><span>Still drawing v2</span></a>
 <a href="https://drive.google.com/drive/folders/1NdbzjMsB3Le66YlvXCWt6ywZI18__sVk" class="drive-item">
     <img src="https://i.postimg.cc/NGRjNq5Y/402B7445-6728-4F7B-82F4-905E9296008C.jpg"><span>Calista</span></a>
 <a href="https://drive.google.com/drive/folders/117KeqfEJU-VrfHPzpAPDeNT62nvaPB7a" class="drive-item">
@@ -149,7 +150,7 @@ h1,h2,h3{color:var(--dark);margin-bottom:15px;}
 <a href="https://drive.google.com/drive/folders/1drtqFx3YBzHjnrjt-BrzdZm5FFlyBCKW" class="drive-item">
     <img src="https://i.postimg.cc/wxRmgGMZ/IMG-0923.jpg"><span>Pancake</span></a>
 <a href="https://drive.google.com/drive/folders/1lWfTHqAbVoZH2YveT70TO5pmfiikwY3G" class="drive-item">
-    <img src="https://i.postimg.cc/zXv9PTGQ/IMG-1322.jpg"><span>Queen Pop</span></a>
+    <img src="https://i.postimg.cc/zXv9PTGQ/IMG-1322.jpg"><span>Queen pop</span></a>
 <a href="https://drive.google.com/drive/folders/1ijU1i-CNAZgKTul6lmiN6VIDsPwVU2sd" class="drive-item">
     <img src="https://i.postimg.cc/jjn8zhvc/mi-m-ch-x-8-20260404131206.png"><span>Harmony</span></a>
 <a href="https://drive.google.com/drive/folders/1pgnqUzdmjW7vK0s_fNCV0SY6-S-FHOzp" class="drive-item">
@@ -157,9 +158,9 @@ h1,h2,h3{color:var(--dark);margin-bottom:15px;}
 <a href="https://drive.google.com/drive/folders/1LaYCivILFAjqKgnzTMJJ5RlRXZgB9YWf" class="drive-item">
     <img src="https://i.postimg.cc/SKKGrfrZ/mi-m-ch-x-225-20260220112659.png"><span>Fusion</span></a>
 <a href="https://drive.google.com/drive/folders/1CrGdw6jr_cYcRr2LXKq_yhrkMvna8fVX" class="drive-item">
-    <img src="https://i.postimg.cc/XNLgBh4y/IMG-1324.jpg"><span>Kawaii Fuji</span></a>
+    <img src="https://i.postimg.cc/XNLgBh4y/IMG-1324.jpg"><span>kawaiifuji</span></a>
 <a href="https://drive.google.com/drive/folders/13zR7r66v8hO-rD2t6LahxD1f9Mc8J1Ue" class="drive-item">
-    <img src="https://i.postimg.cc/KYRmyCfs/34095E6F-A7F5-47B1-997F-21D8B4F9DF07.jpg"><span>Teaching Group</span></a>
+    <img src="https://i.postimg.cc/KYRmyCfs/34095E6F-A7F5-47B1-997F-21D8B4F9DF07.jpg"><span>Teaching group</span></a>
 <a href="https://drive.google.com/drive/folders/1d6IxpNl4zajE7XP-W2KJ17wkGPkG11uj" class="drive-item">
     <img src="https://i.postimg.cc/657Yscxs/IMG-8753.jpg"><span>Mitarashi</span></a>
 <a href="https://drive.google.com/drive/folders/1cV7jkDmRh1VD-nD_I-VDsW__zUzSFYYQ" class="drive-item">
@@ -167,7 +168,7 @@ h1,h2,h3{color:var(--dark);margin-bottom:15px;}
 <a href="https://drive.google.com/drive/folders/1skKUNZSFr1cE_PQwmk5dG-26zjnaRq9J" class="drive-item">
     <img src="https://i.postimg.cc/mDXtBQWk/IMG-1323.jpg"><span>ฟุคุเนโกะ</span></a>
 <a href="https://drive.google.com/drive/folders/1KE9lcHUTP5sS8csxiCD9shzwH3dW9gzV" class="drive-item">
-    <img src="https://i.postimg.cc/J0CJ9NNV/IMG-6637.jpg"><span>Glitter Magic</span></a>
+    <img src="https://i.postimg.cc/J0CJ9NNV/IMG-6637.jpg"><span>Glitter magic</span></a>
 <a href="https://drive.google.com/drive/folders/1Ufh9MFi49FBX00bPe05pXAtlWMdG3-0k" class="drive-item">
     <img src="https://i.postimg.cc/bwZJ9GnV/IMG-6638.jpg"><span>กลุ่มแมวดำ</span></a>
 <a href="https://drive.google.com/drive/folders/1_szs-_HaCJMy6hBb7N4_dDVzZW4jkQoS" class="drive-item">
@@ -177,19 +178,21 @@ h1,h2,h3{color:var(--dark);margin-bottom:15px;}
 <a href="https://drive.google.com/drive/folders/10YI5_ZXufqnMh896HnB2Z6LD888Imh-0" class="drive-item">
     <img src="https://i.postimg.cc/3N9XmyvV/6ADA330A-D064-4D9A-A39C-48E233EEA3EA.jpg"><span>นุบนิบบรัช</span></a>
 <a href="https://drive.google.com/drive/folders/1mDzXfPna4LjDyzU8jRJT9-LQykywM1YZ" class="drive-item">
-    <img src="https://i.postimg.cc/DzbT8LGT/IMG-0367.jpg"><span>Trick Sticker</span></a>
+    <img src="https://i.postimg.cc/DzbT8LGT/IMG-0367.jpg"><span>Trick sticker</span></a>
 <a href="https://drive.google.com/drive/folders/1VG-NqauROtZhjzgYePtfd6TI3XsKry7f" class="drive-item">
-    <img src="https://i.postimg.cc/X738Wfft/mi-m-ch-x-198-20260306115332.png"><span>Sugar Plum v1</span></a>
+    <img src="https://i.postimg.cc/X738Wfft/mi-m-ch-x-198-20260306115332.png"><span>Sugar plum v1</span></a>
 <a href="https://drive.google.com/drive/folders/1IhgsHW0niXL1P7TN-muEteDPSe7lPEwq" class="drive-item">
-    <img src="https://i.postimg.cc/qMdmRVTW/mi-m-ch-x-251-20260319222852.png"><span>Sugar Plum v2</span></a>
+    <img src="https://i.postimg.cc/qMdmRVTW/mi-m-ch-x-251-20260319222852.png"><span>Sugar plum v2</span></a>
 <a href="https://drive.google.com/drive/folders/1-TTWSUqSELb80zXcnYaZaYxTyGRLio5W" class="drive-item">
-    <img src="https://i.postimg.cc/13sYWx7P/mi-m-ch-x-210-20260306134602.png"><span>Kuromi Box</span></a>
+    <img src="https://i.postimg.cc/13sYWx7P/mi-m-ch-x-210-20260306134602.png"><span>Kuromi box</span></a>
 <a href="https://drive.google.com/drive/folders/1g565WGi56qOg09APdgYthQPRZYHsQ9pf" class="drive-item">
-    <img src="https://i.postimg.cc/bJC6rsq9/mi-m-ch-x-230-20260310153533.png"><span>Little Spark</span></a>
+    <img src="https://i.postimg.cc/bJC6rsq9/mi-m-ch-x-230-20260310153533.png"><span>Little spark</span></a>
 <a href="https://drive.google.com/drive/folders/1A5FC5j1dGakbow9ISiFywUSPOymAXPSW" class="drive-item">
     <img src="https://i.postimg.cc/vHBgFhqh/att-Pq-Ap-c6YBh-LNi-p-GWf-XCRsig2RSzk-Lj-Xcgfj-LOz3to-A.jpg"><span>Vioer</span></a>
 <a href="https://drive.google.com/drive/folders/1e8R2bs55n3ppm4cP-DTbp7PxPBZZLi2F" class="drive-item">
     <img src="https://i.postimg.cc/9XksqrWD/IMG-8296.jpg"><span>Pikoro</span></a>
+<a href="https://drive.google.com/drive/folders/13zR7r66v8hO-rD2t6LahxD1f9Mc8J1Ue" class="drive-item">
+    <img src="https://i.postimg.cc/3NsbQ15N/mi-m-ch-x-15-20260409105335.png"><span>Merita</span></a>
 </div>
 </div>
 
